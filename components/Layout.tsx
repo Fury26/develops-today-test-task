@@ -12,6 +12,11 @@ export const AppLayout: React.FC<Props> = (props) => {
         <>
             <Head>
                 <title>Develops Today | {props.title}</title>
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
             <NavBar>
                 <Link href="/posts/new">

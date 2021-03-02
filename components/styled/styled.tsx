@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-type Props = {
-    transparent?: boolean;
-};
-
 export type AppTheme = {
     background: string;
     navbar: {
@@ -12,26 +8,9 @@ export type AppTheme = {
     secondary: string;
 };
 
-export const Button = styled.button<Props>`
-    outline: none;
-    border: none;
-    background: none;
-    transition: 0.5s;
-    width: 90%;
-    margin: 0 auto;
-    &:hover {
-        transform: scale(1.01);
-    }
-`;
-
 export const Main = styled.main`
     width: 100vw;
     height: auto;
-`;
-
-export const PostsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
 `;
 
 export const NavBar = styled.nav`

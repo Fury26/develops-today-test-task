@@ -1,15 +1,10 @@
-import { useRouter } from 'next/router';
 import React from 'react';
+import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
-import { Post } from '../helpers/types';
 import { AppState } from '../redux/rootReducer';
-import { Alert } from './alert';
+import { Alert } from './Alert';
 import { PostPage } from './Post';
-import { PostsContainer, Button } from './styled/styled';
-
-type Props = {
-    posts?: Post[];
-};
+import { Button, PostsContainer } from './styled/home-styled';
 
 export const Home: React.FC = () => {
     const router = useRouter();
@@ -24,15 +19,15 @@ export const Home: React.FC = () => {
     return (
         <PostsContainer>
             {error ? <Alert message={error} /> : null}
-            {posts.length !== 0 ? posts.map((post) => {
-                console.log(posts[0]);
-                
-                return (
-                    <Button transparent key={post.id} onClick={() => goToPost(post.id)}>
-                        <PostPage post={post} />
-                    </Button>
-            );
-            }): null}
+            {posts.length !== 0
+                ? posts.map((post) => {
+                      return (
+                          <Button key={post.id} onClick={() => goToPost(post.id)}>
+                              <PostPage post={post} />
+                          </Button>
+                      );
+                  })
+                : null}
         </PostsContainer>
     );
 };

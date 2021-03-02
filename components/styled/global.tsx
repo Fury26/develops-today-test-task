@@ -3,6 +3,7 @@ import { AppTheme } from './styled';
 
 export default createGlobalStyle`
     body {
+        font-family: 'Roboto', sans-serif;
         background-color: ${(props) => (props.theme as AppTheme).background};
         overflow-x: hidden;
         margin: 0;

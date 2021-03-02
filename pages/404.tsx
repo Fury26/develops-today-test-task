@@ -1,22 +1,15 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { BackButton, ErrorContainer, ErrorDiv, ErrorMessage } from '../components/styled/404-styled';
+import { ErrorPage } from '../components/404Page';
 
-const ErrorPage: NextPage = () => {
+const NextErrorPage: NextPage = () => {
     const router = useRouter();
 
     const backHome = () => {
         router.push('/');
     };
 
-    return (
-        <ErrorContainer>
-            <ErrorDiv>
-                <ErrorMessage>Here is error page</ErrorMessage>
-                <BackButton onClick={backHome}>Home</BackButton>
-            </ErrorDiv>
-        </ErrorContainer>
-    );
+    return <ErrorPage message={'Page is not found'} />;
 };
 
-export default ErrorPage;
+export default NextErrorPage;

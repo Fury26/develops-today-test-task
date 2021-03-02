@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, CreatePostWrapper, Input, Label, TextArea } from './styled/create-post-styled';
 import { createPost } from '../redux/actions/postActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { Alert } from './alert';
+import { Alert } from './Alert';
 import { AppState } from '../redux/rootReducer';
 
 type State = {
@@ -36,7 +36,7 @@ export const CreatePost = () => {
 
     const inputHandler = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setState((prev) => ({
-            ...prev,    
+            ...prev,
             [event.target.name]: event.target.value,
         }));
     };
@@ -53,8 +53,11 @@ export const CreatePost = () => {
         };
 
         dispatch(createPost(data));
-
-        
+        setState((prev) => ({
+            ...prev,
+            title: '',
+            body: '',
+        }));
     };
 
     return (
@@ -68,7 +71,7 @@ export const CreatePost = () => {
                 name="body"
                 placeholder="Write your thoughts"
                 value={state.body}
-                onChange={e => inputHandler(e)}
+                onChange={(e) => inputHandler(e)}
             />
             <Button onClick={sumbitHandler}>Publish</Button>
         </CreatePostWrapper>
