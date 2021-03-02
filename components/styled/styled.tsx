@@ -9,8 +9,8 @@ export type AppTheme = {
     navbar: {
         background: string;
     };
+    secondary: string;
 };
-
 
 export const Button = styled.button<Props>`
     outline: none;
