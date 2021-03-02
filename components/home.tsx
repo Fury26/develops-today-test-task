@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import { AppState } from '../redux/rootReducer';
-import { Alert } from './Alert';
+import { AlertMessage } from './AlertMessage';
 import { PostPage } from './Post';
 import { Button, PostsContainer } from './styled/home-styled';
 
@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
 
     return (
         <PostsContainer>
-            {error ? <Alert message={error} /> : null}
+            {error ? <AlertMessage message={error} /> : null}
             {posts.length !== 0
                 ? posts.map((post) => {
                       return (

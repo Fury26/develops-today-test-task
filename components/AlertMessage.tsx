@@ -5,7 +5,7 @@ type Props = {
     message: string;
 };
 
-export const Alert: React.FC<Props> = ({ message }) => {
+export const AlertMessage: React.FC<Props> = ({ message }) => {
     return (
         <AlertContainer>
             <span>{message}</span>

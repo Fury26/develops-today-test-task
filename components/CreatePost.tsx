@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button, CreatePostWrapper, Input, Label, TextArea } from './styled/create-post-styled';
 import { createPost } from '../redux/actions/postActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { Alert } from './Alert';
 import { AppState } from '../redux/rootReducer';
+import { AlertMessage } from './AlertMessage';
 
 type State = {
     message: string;
@@ -62,7 +62,7 @@ export const CreatePost = () => {
 
     return (
         <CreatePostWrapper>
-            {state.message || err ? <Alert message={state.message ? state.message : err} /> : null}
+            {state.message || err ? <AlertMessage message={state.message ? state.message : err} /> : null}
             <Label>Post title</Label>
             <Input autoComplete="off" name="title" placeholder="Title" value={state.title} onChange={inputHandler} />
             <Label>Text</Label>
