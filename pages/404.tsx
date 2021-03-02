@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
 
-export const ErrorPage: NextPage = () => {
+const ErrorPage: NextPage = () => {
     return <div>Error page</div>;
 };
+
+export default ErrorPage;
